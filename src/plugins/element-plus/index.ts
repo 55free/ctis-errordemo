@@ -61,7 +61,7 @@ import {
   ElCheckboxGroup,
   // 指令
   ElLoading,
-  ElInfiniteScroll
+  ElInfiniteScroll,
 } from "element-plus";
 
 // Directives
@@ -126,7 +126,7 @@ const components = [
   ElTimelineItem,
   ElResult,
   ElSteps,
-  ElStep
+  ElStep,
 ];
 
 export function useElementPlus(app: App) {

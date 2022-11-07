@@ -42,8 +42,8 @@ export function getPluginsList(
         // "head"||"head-prepend" || "body" ||"body-prepend"
         themeLinkTagInjectTo: "head",
         // 是否对抽取的css文件内对应scopeName的权重类名移除
-        removeCssScopeName: false
-      }
+        removeCssScopeName: false,
+      },
     }),
     // svg组件化支持
     svgLoader(),
@@ -57,18 +57,18 @@ export function getPluginsList(
           import { setupProdMockServer } from './mockProdServer';
           setupProdMockServer();
         `,
-      logger: false
+      logger: false,
     }),
     // 是否为打包后的文件提供传统浏览器兼容性支持
     VITE_LEGACY
       ? legacy({
           targets: ["ie >= 11"],
-          additionalLegacyPolyfills: ["regenerator-runtime/runtime"]
+          additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
         })
       : null,
     // 打包分析
     lifecycle === "report"
       ? visualizer({ open: true, brotliSize: true, filename: "report.html" })
-      : null
+      : null,
   ];
 }

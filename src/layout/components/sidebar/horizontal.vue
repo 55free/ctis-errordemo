@@ -17,7 +17,7 @@ const {
   onPanel,
   menuSelect,
   username,
-  avatarsStyle
+  avatarsStyle,
 } = useNav();
 
 nextTick(() => {

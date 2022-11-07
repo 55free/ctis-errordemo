@@ -3,7 +3,7 @@ import { useRoute } from "vue-router";
 import { ref, unref, onMounted, nextTick } from "vue";
 
 defineOptions({
-  name: "FrameView"
+  name: "FrameView",
 });
 
 const loading = ref(true);

@@ -6,7 +6,7 @@ const errorRouter: RouteConfigsTable = {
   meta: {
     icon: "information-line",
     title: "异常页面",
-    rank: 9
+    rank: 9,
   },
   children: [
     {
@@ -14,26 +14,26 @@ const errorRouter: RouteConfigsTable = {
       name: "403",
       component: () => import("@/views/error/403.vue"),
       meta: {
-        title: "403"
-      }
+        title: "403",
+      },
     },
     {
       path: "/error/404",
       name: "404",
       component: () => import("@/views/error/404.vue"),
       meta: {
-        title: "404"
-      }
+        title: "404",
+      },
     },
     {
       path: "/error/500",
       name: "500",
       component: () => import("@/views/error/500.vue"),
       meta: {
-        title: "500"
-      }
-    }
-  ]
+        title: "500",
+      },
+    },
+  ],
 };
 
 export default errorRouter;

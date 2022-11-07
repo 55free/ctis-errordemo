@@ -7,9 +7,9 @@ const homeRouter: RouteConfigsTable = {
   component: Layout,
   redirect: "/welcome",
   meta: {
-    icon: "home-filled",
+    // icon: "home-filled",
     title: "首页",
-    rank: 0
+    rank: 0,
   },
   children: [
     {
@@ -17,10 +17,14 @@ const homeRouter: RouteConfigsTable = {
       name: "Welcome",
       component: () => import("@/views/welcome/index.vue"),
       meta: {
-        title: "首页"
-      }
-    }
-  ]
+        title: "首页",
+      },
+    },
+  ],
 };
+
+// const homeRouter: RouteConfigsTable = {
+
+// };
 
 export default homeRouter;

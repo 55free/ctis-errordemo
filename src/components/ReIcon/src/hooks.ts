@@ -26,9 +26,9 @@ export function useRenderIcon(icon: any, attrs?: iconType): Component {
         return h(FontIcon, {
           icon: iconName,
           iconType,
-          ...attrs
+          ...attrs,
         });
-      }
+      },
     });
   } else if (typeof icon === "function" || typeof icon?.render === "function") {
     // svg
@@ -41,9 +41,9 @@ export function useRenderIcon(icon: any, attrs?: iconType): Component {
           attrs && attrs["online"] ? IconifyIconOnline : IconifyIconOffline;
         return h(IconifyIcon, {
           icon: icon,
-          ...attrs
+          ...attrs,
         });
-      }
+      },
     });
   }
 }

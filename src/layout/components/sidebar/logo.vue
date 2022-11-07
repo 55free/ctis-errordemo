@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { useNav } from "@/layout/hooks/useNav";
+// import { useNav } from "@/layout/hooks/useNav";
 
 const props = defineProps({
-  collapse: Boolean
+  collapse: Boolean,
 });
 
-const { title } = useNav();
+// const { title } = useNav();
+const title = "气矿管理系统";
 </script>
 
 <template>

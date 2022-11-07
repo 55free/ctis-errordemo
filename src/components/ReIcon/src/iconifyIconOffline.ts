@@ -39,6 +39,12 @@ import CloseOtherTags from "@iconify-icons/ri/text-spacing";
 import CloseAllTags from "@iconify-icons/ri/subtract-line";
 import Fullscreen from "@iconify-icons/ri/fullscreen-fill";
 import ExitFullscreen from "@iconify-icons/ri/fullscreen-exit-fill";
+
+// 添加薪的图标
+import CarFill from "@iconify-icons/ri/car-fill";
+import FileFill from "@iconify-icons/ri/file-2-fill";
+import ArchiveFill from "@iconify-icons/ri/archive-drawer-fill";
+
 addIcon("arrow-right-s-line", ArrowRightSLine);
 addIcon("arrow-left-s-line", ArrowLeftSLine);
 addIcon("logout-circle-r-line", LogoutCircleRLine);
@@ -59,6 +65,12 @@ addIcon("close-all-tags", CloseAllTags);
 addIcon("fullscreen", Fullscreen);
 addIcon("exit-fullscreen", ExitFullscreen);
 
+// 添加薪的图标
+
+addIcon("car-fill", CarFill);
+addIcon("file-fill", FileFill);
+addIcon("archive-fill", ArchiveFill);
+
 // Iconify Icon在Vue里离线使用（用于内网环境）https://docs.iconify.design/icon-components/vue/offline.html
 export default defineComponent({
   name: "IconifyIconOffline",
@@ -66,8 +78,8 @@ export default defineComponent({
   props: {
     icon: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   render() {
     const attrs = this.$attrs;
@@ -78,11 +90,11 @@ export default defineComponent({
         style: attrs?.style
           ? Object.assign(attrs.style, { outline: "none" })
           : { outline: "none" },
-        ...attrs
+        ...attrs,
       },
       {
-        default: () => []
+        default: () => [],
       }
     );
-  }
+  },
 });

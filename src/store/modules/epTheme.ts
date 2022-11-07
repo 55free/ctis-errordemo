@@ -12,7 +12,7 @@ export const useEpThemeStore = defineStore({
       getConfig().EpThemeColor,
     epTheme:
       storageLocal.getItem<StorageConfigs>("responsive-layout")?.theme ??
-      getConfig().Theme
+      getConfig().Theme,
   }),
   getters: {
     getEpThemeColor() {
@@ -27,7 +27,7 @@ export const useEpThemeStore = defineStore({
       } else {
         return "#fff";
       }
-    }
+    },
   },
   actions: {
     setEpThemeColor(newColor: string): void {
@@ -37,8 +37,8 @@ export const useEpThemeStore = defineStore({
       if (!layout) return;
       layout.epThemeColor = newColor;
       storageLocal.setItem("responsive-layout", layout);
-    }
-  }
+    },
+  },
 });
 
 export function useEpThemeStoreHook() {

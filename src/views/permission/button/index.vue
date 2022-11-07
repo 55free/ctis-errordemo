@@ -3,13 +3,13 @@ import { type CSSProperties, computed } from "vue";
 import { hasAuth, getAuths } from "@/router/utils";
 
 defineOptions({
-  name: "PermissionButton"
+  name: "PermissionButton",
 });
 
 let elStyle = computed((): CSSProperties => {
   return {
     width: "85vw",
-    justifyContent: "start"
+    justifyContent: "start",
   };
 });
 </script>

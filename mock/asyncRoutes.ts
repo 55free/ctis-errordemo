@@ -12,7 +12,7 @@ const permissionRouter = {
   meta: {
     title: "权限管理",
     icon: "lollipop",
-    rank: 10
+    rank: 10,
   },
   children: [
     {
@@ -20,8 +20,8 @@ const permissionRouter = {
       name: "PermissionPage",
       meta: {
         title: "页面权限",
-        roles: ["admin", "common"]
-      }
+        roles: ["admin", "common"],
+      },
     },
     {
       path: "/permission/button/index",
@@ -29,10 +29,10 @@ const permissionRouter = {
       meta: {
         title: "按钮权限",
         roles: ["admin", "common"],
-        auths: ["btn_add", "btn_edit", "btn_delete"]
-      }
-    }
-  ]
+        auths: ["btn_add", "btn_edit", "btn_delete"],
+      },
+    },
+  ],
 };
 
 export default [
@@ -42,8 +42,8 @@ export default [
     response: () => {
       return {
         success: true,
-        data: [permissionRouter]
+        data: [permissionRouter],
       };
-    }
-  }
+    },
+  },
 ] as MockMethod[];

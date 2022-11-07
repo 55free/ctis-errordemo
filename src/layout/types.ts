@@ -4,9 +4,9 @@ export const routerArrays: Array<RouteConfigs> = [
     parentPath: "/",
     meta: {
       title: "首页",
-      icon: "home-filled"
-    }
-  }
+      icon: "home-filled",
+    },
+  },
 ];
 
 export type routeMetaType = {

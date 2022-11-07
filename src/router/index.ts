@@ -9,7 +9,7 @@ import {
   Router,
   createRouter,
   RouteRecordRaw,
-  RouteComponent
+  RouteComponent,
 } from "vue-router";
 import {
   ascending,
@@ -19,21 +19,22 @@ import {
   findRouteByPath,
   handleAliveRoute,
   formatTwoStageRoutes,
-  formatFlatteningRoutes
+  formatFlatteningRoutes,
 } from "./utils";
 import {
   buildHierarchyTree,
   openLink,
   isUrl,
-  storageSession
+  storageSession,
 } from "@pureadmin/utils";
 
 import homeRouter from "./modules/home";
-import errorRouter from "./modules/error";
+// import errorRouter from "./modules/error";
 import remainingRouter from "./modules/remaining";
 
 /** 原始静态路由（未做任何处理） */
-const routes = [homeRouter, errorRouter];
+// const routes = [homeRouter, errorRouter];
+const routes = [homeRouter];
 
 /** 导出处理后的静态路由（三级及以上的路由全部拍成二级） */
 export const constantRoutes: Array<RouteRecordRaw> = formatTwoStageRoutes(
@@ -67,7 +68,7 @@ export const router: Router = createRouter({
         }
       }
     });
-  }
+  },
 });
 
 /** 重置路由 */
@@ -142,7 +143,7 @@ router.beforeEach((to: toRouteType, _from, next) => {
               useMultiTagsStoreHook().handleTags("push", {
                 path: route.path,
                 name: route.name,
-                meta: route.meta
+                meta: route.meta,
               });
             }
           }

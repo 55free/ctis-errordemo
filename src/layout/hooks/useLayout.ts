@@ -21,7 +21,7 @@ export function useLayout() {
         theme: $config?.Theme ?? "default",
         darkMode: $config?.DarkMode ?? false,
         sidebarStatus: $config?.SidebarStatus ?? true,
-        epThemeColor: $config?.EpThemeColor ?? "#409EFF"
+        epThemeColor: $config?.EpThemeColor ?? "#409EFF",
       };
     }
     /** 灰色模式、色弱模式、隐藏标签页 */
@@ -32,7 +32,7 @@ export function useLayout() {
         hideTabs: $config?.HideTabs ?? false,
         showLogo: $config?.ShowLogo ?? true,
         showModel: $config?.ShowModel ?? "smart",
-        multiTagsCache: $config?.MultiTagsCache ?? false
+        multiTagsCache: $config?.MultiTagsCache ?? false,
       };
     }
   };
@@ -49,6 +49,6 @@ export function useLayout() {
   return {
     layout,
     layoutTheme,
-    initStorage
+    initStorage,
   };
 }

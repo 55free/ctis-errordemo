@@ -4,7 +4,7 @@ import {
   RouteComponent,
   createWebHistory,
   createWebHashHistory,
-  RouteRecordNormalized
+  RouteRecordNormalized,
 } from "vue-router";
 import { router } from "./index";
 import { isProxy, toRaw } from "vue";
@@ -15,7 +15,7 @@ import {
   isString,
   storageSession,
   buildHierarchyTree,
-  isIncludeAllChildren
+  isIncludeAllChildren,
 } from "@pureadmin/utils";
 import { cloneDeep, intersection } from "lodash-unified";
 import { sessionKey, type DataInfo } from "@/utils/auth";
@@ -91,7 +91,7 @@ function delAliveRoutes(delAliveRouteList: Array<RouteConfigs>) {
   delAliveRouteList.forEach(route => {
     usePermissionStoreHook().cacheOperate({
       mode: "delete",
-      name: route?.name
+      name: route?.name,
     });
   });
 }
@@ -146,7 +146,7 @@ function addPathMatch() {
     router.addRoute({
       path: "/:pathMatch(.*)",
       name: "pathMatch",
-      redirect: "/error/404"
+      redirect: "/error/404",
     });
   }
 }
@@ -224,7 +224,7 @@ function formatTwoStageRoutes(routesList: RouteRecordRaw[]) {
         path: v.path,
         redirect: v.redirect,
         meta: v.meta,
-        children: []
+        children: [],
       });
     } else {
       newRoutesList[0].children.push({ ...v });
@@ -244,13 +244,13 @@ function handleAliveRoute(matched: RouteRecordNormalized[], mode?: string) {
     case "delete":
       usePermissionStoreHook().cacheOperate({
         mode: "delete",
-        name: matched[matched.length - 1].name
+        name: matched[matched.length - 1].name,
       });
       break;
     default:
       usePermissionStoreHook().cacheOperate({
         mode: "delete",
-        name: matched[matched.length - 1].name
+        name: matched[matched.length - 1].name,
       });
       useTimeoutFn(() => {
         matched.forEach(v => {
@@ -344,5 +344,5 @@ export {
   handleAliveRoute,
   formatTwoStageRoutes,
   formatFlatteningRoutes,
-  filterNoPermissionTree
+  filterNoPermissionTree,
 };

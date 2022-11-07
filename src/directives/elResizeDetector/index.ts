@@ -4,7 +4,7 @@ import type { Erd } from "element-resize-detector";
 import { emitter } from "@/utils/mitt";
 
 const erd: Erd = elementResizeDetectorMaker({
-  strategy: "scroll"
+  strategy: "scroll",
 });
 
 export const resize: Directive = {
@@ -23,5 +23,5 @@ export const resize: Directive = {
   },
   unmounted(el: HTMLElement) {
     erd.uninstall(el);
-  }
+  },
 };

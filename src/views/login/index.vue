@@ -17,7 +17,7 @@ import dayIcon from "@/assets/svg/day.svg?component";
 import darkIcon from "@/assets/svg/dark.svg?component";
 
 defineOptions({
-  name: "Login"
+  name: "Login",
 });
 const router = useRouter();
 const loading = ref(false);
@@ -32,7 +32,7 @@ const { title } = useNav();
 
 const ruleForm = reactive({
   username: "admin",
-  password: "admin123"
+  password: "admin123",
 });
 
 const onLogin = async (formEl: FormInstance | undefined) => {
@@ -47,7 +47,7 @@ const onLogin = async (formEl: FormInstance | undefined) => {
             // 获取后端路由
             initRouter().then(() => {
               message.success("登录成功");
-              router.push("/");
+              router.push("/system");
             });
           }
         });
@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="select-none">
     <img :src="bg" class="wave" />
-    <div class="flex-c absolute right-5 top-3">
+    <div class="absolute flex-c right-5 top-3">
       <!-- 主题 -->
       <el-switch
         v-model="dataTheme"
@@ -110,8 +110,8 @@ onBeforeUnmount(() => {
                   {
                     required: true,
                     message: '请输入账号',
-                    trigger: 'blur'
-                  }
+                    trigger: 'blur',
+                  },
                 ]"
                 prop="username"
               >

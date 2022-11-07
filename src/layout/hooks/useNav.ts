@@ -98,7 +98,7 @@ export function useNav() {
             /** 切换左侧菜单 通知标签页 */
             emitter.emit("changLayoutRoute", {
               indexPath,
-              parentPath
+              parentPath,
             });
           }
         } else {
@@ -132,6 +132,6 @@ export function useNav() {
     isCollapse,
     pureApp,
     username,
-    avatarsStyle
+    avatarsStyle,
   };
 }

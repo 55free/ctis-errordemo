@@ -20,9 +20,9 @@ const loginRules = reactive(<FormRules>{
           callback();
         }
       },
-      trigger: "blur"
-    }
-  ]
+      trigger: "blur",
+    },
+  ],
 });
 
 export { loginRules };

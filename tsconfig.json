@@ -40,7 +40,7 @@
     "src/**/*.vue",
     "types/*.d.ts",
     "mock/*.ts",
-    "vite.config.ts"
+    "vite.config.ts",
   ],
   "exclude": ["node_modules", "dist", "**/*.js", "index.html"]
 }

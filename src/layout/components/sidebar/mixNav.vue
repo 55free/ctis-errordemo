@@ -19,7 +19,7 @@ const {
   menuSelect,
   resolvePath,
   username,
-  avatarsStyle
+  avatarsStyle,
 } = useNav();
 
 function getDefaultActive(routePath) {

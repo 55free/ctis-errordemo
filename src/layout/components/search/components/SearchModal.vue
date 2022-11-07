@@ -40,7 +40,7 @@ const show = computed({
   },
   set(val: boolean) {
     emit("update:value", val);
-  }
+  },
 });
 
 watch(show, async val => {

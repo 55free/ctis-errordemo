@@ -15,12 +15,12 @@ export const useMultiTagsStore = defineStore({
       ? storageLocal.getItem<StorageConfigs>("responsive-tags")
       : [...routerArrays],
     multiTagsCache: storageLocal.getItem<StorageConfigs>("responsive-configure")
-      .multiTagsCache
+      .multiTagsCache,
   }),
   getters: {
     getMultiTagsCache() {
       return this.multiTagsCache;
-    }
+    },
   },
   actions: {
     multiTagsCacheChange(multiTagsCache: boolean) {
@@ -103,8 +103,8 @@ export const useMultiTagsStore = defineStore({
         case "slice":
           return this.multiTags.slice(-1);
       }
-    }
-  }
+    },
+  },
 });
 
 export function useMultiTagsStoreHook() {

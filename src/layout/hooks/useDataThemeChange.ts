@@ -9,7 +9,7 @@ import { useEpThemeStoreHook } from "@/store/modules/epTheme";
 import {
   darken,
   lighten,
-  toggleTheme
+  toggleTheme,
 } from "@pureadmin/theme/dist/browser-utils";
 
 export function useDataThemeChange() {
@@ -32,7 +32,7 @@ export function useDataThemeChange() {
     /* 深粉色 */
     { color: "#eb2f96", themeColor: "pink" },
     /* 深紫罗兰色 */
-    { color: "#722ed1", themeColor: "saucePurple" }
+    { color: "#722ed1", themeColor: "saucePurple" },
   ]);
 
   const { $storage } = useGlobal<GlobalPropertiesApi>();
@@ -43,14 +43,14 @@ export function useDataThemeChange() {
   function setLayoutThemeColor(theme = "default") {
     layoutTheme.value.theme = theme;
     toggleTheme({
-      scopeName: `layout-theme-${theme}`
+      scopeName: `layout-theme-${theme}`,
     });
     $storage.layout = {
       layout: layout.value,
       theme,
       darkMode: dataTheme.value,
       sidebarStatus: $storage.layout?.sidebarStatus,
-      epThemeColor: $storage.layout?.epThemeColor
+      epThemeColor: $storage.layout?.epThemeColor,
     };
 
     if (theme === "default" || theme === "light") {
@@ -111,6 +111,6 @@ export function useDataThemeChange() {
     themeColors,
     dataThemeChange,
     setEpThemeColor,
-    setLayoutThemeColor
+    setLayoutThemeColor,
   };
 }

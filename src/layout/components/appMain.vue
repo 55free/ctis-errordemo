@@ -5,7 +5,7 @@ import { h, computed, Transition, defineComponent } from "vue";
 import { usePermissionStoreHook } from "@/store/modules/permission";
 
 const props = defineProps({
-  fixedHeader: Boolean
+  fixedHeader: Boolean,
 });
 
 const { $storage, $config } = useGlobal<GlobalPropertiesApi>();
@@ -34,7 +34,7 @@ const getSectionStyle = computed(() => {
     !hideTabs.value && layout ? "padding-top: 85px;" : "",
     hideTabs.value && !layout.value ? "padding-top: 48px" : "",
     !hideTabs.value && !layout.value ? "padding-top: 85px;" : "",
-    props.fixedHeader ? "" : "padding-top: 0;"
+    props.fixedHeader ? "" : "padding-top: 0;",
   ];
 });
 
@@ -57,19 +57,19 @@ const transitionMain = defineComponent({
           transitions.value(this.route) &&
           `animate__animated ${this.route.meta.transition.leaveTransition}`,
         mode: "out-in",
-        appear: true
+        appear: true,
       },
       {
-        default: () => [this.$slots.default()]
+        default: () => [this.$slots.default()],
       }
     );
   },
   props: {
     route: {
       type: undefined,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>
 

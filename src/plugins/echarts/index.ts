@@ -10,7 +10,7 @@ import {
   ToolboxComponent,
   TooltipComponent,
   DataZoomComponent,
-  VisualMapComponent
+  VisualMapComponent,
 } from "echarts/components";
 
 const { use } = echarts;
@@ -27,7 +27,7 @@ use([
   ToolboxComponent,
   TooltipComponent,
   DataZoomComponent,
-  VisualMapComponent
+  VisualMapComponent,
 ]);
 
 /**

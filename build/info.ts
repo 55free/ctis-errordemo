@@ -33,9 +33,9 @@ export function viteBuildInfo(): Plugin {
                 )
               )
             );
-          }
+          },
         });
       }
-    }
+    },
   };
 }

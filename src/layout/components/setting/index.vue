@@ -6,7 +6,7 @@ import {
   reactive,
   computed,
   nextTick,
-  useCssModule
+  useCssModule,
 } from "vue";
 import { getConfig } from "@/config";
 import { useRouter } from "vue-router";
@@ -25,7 +25,7 @@ import {
   debounce,
   useGlobal,
   storageLocal,
-  storageSession
+  storageSession,
 } from "@pureadmin/utils";
 import { toggleTheme } from "@pureadmin/theme/dist/browser-utils";
 
@@ -49,7 +49,7 @@ const {
   themeColors,
   dataThemeChange,
   setEpThemeColor,
-  setLayoutThemeColor
+  setLayoutThemeColor,
 } = useDataThemeChange();
 
 /* body添加layout属性，作用于src/style/sidebar.scss */
@@ -57,7 +57,7 @@ if (unref(layoutTheme)) {
   let layout = unref(layoutTheme).layout;
   let theme = unref(layoutTheme).theme;
   toggleTheme({
-    scopeName: `layout-theme-${theme}`
+    scopeName: `layout-theme-${theme}`,
   });
   setLayoutModel(layout);
 }
@@ -73,7 +73,7 @@ const settings = reactive({
   tabsVal: $storage.configure.hideTabs,
   showLogo: $storage.configure.showLogo,
   showModel: $storage.configure.showModel,
-  multiTagsCache: $storage.configure.multiTagsCache
+  multiTagsCache: $storage.configure.multiTagsCache,
 });
 
 const getThemeColorStyle = computed(() => {
@@ -215,7 +215,7 @@ function setLayoutModel(layout: string) {
     theme: layoutTheme.value.theme,
     darkMode: $storage.layout?.darkMode,
     sidebarStatus: $storage.layout?.sidebarStatus,
-    epThemeColor: $storage.layout?.epThemeColor
+    epThemeColor: $storage.layout?.epThemeColor,
   };
   useAppStoreHook().setLayout(layout);
 }

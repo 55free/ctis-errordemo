@@ -11,12 +11,12 @@ import zhCn from "element-plus/lib/locale/lang/zh-cn";
 export default defineComponent({
   name: "app",
   components: {
-    [ElConfigProvider.name]: ElConfigProvider
+    [ElConfigProvider.name]: ElConfigProvider,
   },
   computed: {
     currentLocale() {
       return zhCn;
-    }
-  }
+    },
+  },
 });
 </script>

@@ -14,7 +14,7 @@ const {
   pureApp,
   username,
   avatarsStyle,
-  toggleSideBar
+  toggleSideBar,
 } = useNav();
 </script>
 

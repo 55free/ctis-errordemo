@@ -14,7 +14,7 @@ export const injectResponsiveStorage = (app: App, config: ServerConfigs) => {
         theme: config.Theme ?? "default",
         darkMode: config.DarkMode ?? false,
         sidebarStatus: config.SidebarStatus ?? true,
-        epThemeColor: config.EpThemeColor ?? "#409EFF"
+        epThemeColor: config.EpThemeColor ?? "#409EFF",
       },
       configure: Storage.getData("configure", nameSpace) ?? {
         grey: config.Grey ?? false,
@@ -22,13 +22,13 @@ export const injectResponsiveStorage = (app: App, config: ServerConfigs) => {
         hideTabs: config.HideTabs ?? false,
         showLogo: config.ShowLogo ?? true,
         showModel: config.ShowModel ?? "smart",
-        multiTagsCache: config.MultiTagsCache ?? false
-      }
+        multiTagsCache: config.MultiTagsCache ?? false,
+      },
     },
     config.MultiTagsCache
       ? {
           // 默认显示首页tag
-          tags: Storage.getData("tags", nameSpace) ?? routerArrays
+          tags: Storage.getData("tags", nameSpace) ?? routerArrays,
         }
       : {}
   );
